@@ -14,8 +14,10 @@
 ## Build
 Good introduction to CMake: https://cliutils.gitlab.io/modern-cmake/
 
-Create a directory for build files: `mkdir build`
-Move into it and compile the library into it: `cd build`, `cmake ..`, `make`
+1. Create a directory for build files: `mkdir build`
+2. `cd build`
+3. `cmake ..`
+4. `make`
 
 ## Run
 
