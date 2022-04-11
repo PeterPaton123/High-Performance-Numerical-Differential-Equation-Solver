@@ -27,5 +27,5 @@ To run the library in C++:
 
 To use the C++ library to solve a differential equation and plot the results in python:
 1. Provide the differential equation to the example_de function in the python program (build/src/Example.py)
-2. Optionally provide a solution (if known to check accuracy of the picard iterates against, as outlined in the python file)
+2. Optionally provide a solution (if known) to check accuracy of the picard iterates, as outlined in the python file
 3. Run the program: 'python3 Example.py'
