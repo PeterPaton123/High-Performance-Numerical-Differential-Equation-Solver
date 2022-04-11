@@ -22,9 +22,10 @@ Good introduction to CMake: https://cliutils.gitlab.io/modern-cmake/
 ## Run
 
 To run the library in C++:
-`cd build/src/`
-`./main.cpp`
+1. Find the built output files: `cd build/src/`
+2. Run `./main.cpp`
 
 To use the C++ library to solve a differential equation and plot the results in python:
-1. Provide the differential equation to the python program in build/src/Example.py
-2. Run the program: 'python3 Example.py'
+1. Provide the differential equation to the example_de function in the python program (build/src/Example.py)
+2. Optionally provide a solution (if known to check accuracy of the picard iterates against, as outlined in the python file)
+3. Run the program: 'python3 Example.py'
