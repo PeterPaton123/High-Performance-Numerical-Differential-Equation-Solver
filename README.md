@@ -6,7 +6,7 @@
 1. Install cmake3.20+ from source
 
 ## Setup
-1. Check out the repo and the submodules: `git clone --recurse-submodules git@github.com:IC3RD/CPP-design-pattern-for-low-latency.git`
+1. Check out the repo and the submodules: `git clone --recurse-submodules git@github.com:PeterPaton123/High-Performance-Numerical-Differential-Equation-Solver.git`
 2. Set up a virtual environment for python libraries: `python3 -m venv .`
 3. Install those python libraries: `pip install -r requirements.txt`
 4. Open the virtual environment: `. venv/bin/activate`
