@@ -1,4 +1,4 @@
-# High-Performance-Numerical-Differential-Equation-Solver
+# High Performance Numerical Differential Equation Solver
 
 
 ## Requirements
