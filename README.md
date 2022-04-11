@@ -2,8 +2,8 @@
 
 
 ## Requirements
-1. Install g++-10 & gcc-10.
-1. Install cmake3.20+ from source
+1. Install g++-10
+1. Install cmake3.20+
 
 ## Setup
 1. Check out the repo and the submodules: `git clone --recurse-submodules git@github.com:PeterPaton123/High-Performance-Numerical-Differential-Equation-Solver.git`
