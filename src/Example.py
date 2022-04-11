@@ -11,13 +11,11 @@ def printf(format, *args):
 def example_de(x, t): 
     return x
 
-def example_solution(t):
-    return math.exp(t)
+t0 = 0
+x0 = 1
 
-de = HPNDES.DifferentialEquationSolver(example_de, 0.0, 1.0, -10.0, 10.0)
-
-# If solution is known provide the function in the example_solution method above, otherwise comment out any lines which refer to the solution_points
-solution_points = np.array([example_solution(xi) for xi in np.concatenate((de.get_sample_times_before_t0(), de.get_sample_times_after_t0()[1:]))])
+de = HPNDES.DifferentialEquationSolver(example_de, t0, x0, -10.0, 10.0)
+solution_points = np.array([math.exp(xi) for xi in np.concatenate((de.get_sample_times_before_t0(), de.get_sample_times_after_t0()[1:]))])
 
 colours = ['y', 'g', 'b', 'c', 'm', 'r']
 
@@ -26,13 +24,15 @@ for i in range(0, 6):
     sample_points_before_t0 = np.array(de.get_sample_times_before_t0())
     sample_points_after_t0 = np.array(de.get_sample_times_after_t0())
     #print(np.size(sample_points_after_t0[0:]))
-    plt.plot(sample_points_before_t0, function_points[:101], ls='--', color = colours[i], alpha=1.0)
+    plt.plot(sample_points_before_t0, function_points[:101], ls='--', color = colours[i], alpha=1.0, label="Picard iteration" + str(4 * i))
     plt.plot(sample_points_after_t0[0:], function_points[100:], ls='--', color = colours[i], alpha=1.0)
     de.perform_picard_iterations(4)
-    # If solution is known (eg in this case we know it to be exp(t))
     printf("Picard iteration %d: RMSE=%f\n", 4*i, np.sqrt(np.mean((function_points-solution_points)**2)))
 
-plt.plot(np.array(de.get_sample_times_before_t0()), solution_points[:101], ls='-', color='k', alpha=0.7)
+plt.plot(np.array(de.get_sample_times_before_t0()), solution_points[:101], ls='-', color='k', alpha=0.7, label="Solution")
 plt.plot(np.array(de.get_sample_times_after_t0()[1:]), solution_points[101:], ls='-', color='k', alpha=0.7)
 
+plt.plot(t0, x0, 'ko')
+
+plt.legend()
 plt.show()
